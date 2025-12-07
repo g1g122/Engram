@@ -1,0 +1,28 @@
+# General
+.DS_Store
+Thumbs.db
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+
+# Python (Common in research)
+__pycache__/
+*.pyc
+venv/
+env/
+.env
+.ipynb_checkpoints/
+
+# LaTeX / Markdown output
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# big files
+PDF/
