@@ -24,5 +24,12 @@ env/
 *.fls
 *.fdb_latexmk
 
-# big files
-PDF/
+# logs
+*.log
+
+# Datasets
+datasets/
+
+# Models weight
+*.pt
+*.pth
