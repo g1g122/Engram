@@ -26,6 +26,7 @@ env/
 
 # logs
 *.log
+logs
 
 # Datasets
 datasets/
