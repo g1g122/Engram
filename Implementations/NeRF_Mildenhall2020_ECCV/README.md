@@ -16,14 +16,12 @@ Supports both **Blender Synthetic** (360° object-centric) and **LLFF** (forward
 <tr>
 <td align="center">
 
-<!-- TODO: Replace with actual video URL from GitHub Issue -->
-https://github.com/YOUR_USER/YOUR_REPO/assets/VIDEO_LEGO_F2
+![Lego factor2](assets/lego_factor2.gif)
 
 </td>
 <td align="center">
 
-<!-- TODO: Replace with actual video URL from GitHub Issue -->
-https://github.com/YOUR_USER/YOUR_REPO/assets/VIDEO_FERN_F4
+![Fern factor4](assets/fern_factor4.gif)
 
 </td>
 </tr>
@@ -31,8 +29,7 @@ https://github.com/YOUR_USER/YOUR_REPO/assets/VIDEO_FERN_F4
 
 ### Full Resolution (Lego 800×800)
 
-<!-- TODO: Replace with actual video URL from GitHub Issue -->
-https://github.com/YOUR_USER/YOUR_REPO/assets/VIDEO_LEGO_F1
+![Lego factor1](assets/lego_factor1.gif)
 
 > Lego scene at full 800×800 resolution, 200k iterations, ~33 dB PSNR.
 
@@ -58,14 +55,12 @@ When constructing orthonormal camera frames from averaged axes, the cross produc
 <tr>
 <td align="center">
 
-<!-- TODO: Replace with actual video URL from GitHub Issue -->
-https://github.com/YOUR_USER/YOUR_REPO/assets/VIDEO_FERN_CORRECT
+![Fern correct](assets/fern_factor4.gif)
 
 </td>
 <td align="center">
 
-<!-- TODO: Replace with actual video URL from GitHub Issue -->
-https://github.com/YOUR_USER/YOUR_REPO/assets/VIDEO_FERN_WRONG
+![Fern wrong cross product](assets/fern_factor4_cross_wrong.gif)
 
 </td>
 </tr>
