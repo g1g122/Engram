@@ -1,0 +1,42 @@
+# NeRF Configuration for the Fern Scene (LLFF Real-World Dataset)
+# Reference: Mildenhall et al. 2020, Table 5
+
+experiment:
+  name: "fern"
+  base_dir: "./logs"            # Directory for checkpoints and logs
+
+data:
+  datadir: "../datasets/nerf_llff_data/fern"
+  dataset_type: "llff"
+  factor: 1                     # Downsample factor (1 = full res, 4 or 8 for faster training)
+  white_bkgd: false             # Real-world photos, no alpha channel
+
+rendering:
+  use_ndc: true                 # Enable NDC space warping for forward-facing scene
+  near: 0.0                     # NDC near bound (always 0 after warping)
+  far: 1.0                      # NDC far bound (always 1 after warping)
+  N_samples: 64                 # Coarse samples per ray
+  N_importance: 128             # Additional fine samples per ray
+  chunk: 32768                  # Max points per MLP query (8 * 4096)
+  rays_chunk: 4096              # Max rays to render at once
+
+model:
+  net_depth: 8                  # Density branch layers
+  net_width: 256                # Hidden layer width
+  skip_layer: 4                 # Skip connection index
+  color_width: 128              # Color branch hidden width
+  pos_L: 10                    # Positional encoding frequencies for xyz
+  dir_L: 4                     # Positional encoding frequencies for direction
+
+training:
+  N_iters: 200000               # Total training iterations
+  batch_size: 4096              # Number of rays per training step
+  lrate: 0.0005                 # Initial learning rate (5e-4)
+  lrate_decay_steps: 250000     # Exponential decay over this many steps
+  lrate_decay_rate: 0.1         # Decay to this fraction of initial lr
+
+logging:
+  print_every: 100              # Print loss/PSNR every N iters
+  save_every: 10000             # Save checkpoint every N iters
+  val_every: 5000               # Run validation every N iters
+  val_num_rays: 1024            # Number of rays for quick validation

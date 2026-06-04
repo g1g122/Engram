@@ -1,0 +1,86 @@
+# TDANN Configuration (Margalit et al. 2024)
+# Note: mm/mm^2 are used as base units for physical parameters.
+
+experiment:
+  name: "TDANN_Reproduction"
+  seed: 42
+  output_dir: "./outputs"
+
+model:
+  backbone: "resnet18"
+  # Mapping from Paper Layer IDs (L2-L9) to ResNet-18 BasicBlocks (0-7).
+  # The Standard ResNet-18 has 4 Stages, each with 2 Blocks. Total 8 Blocks.
+  layers:
+    # --- Retina (Stage 1) ---
+    "L2":
+      block_index: 0 # 1st Block of ResNet
+      region: "Retina"
+      surface_area_mm2: 5.7  # Paper Value
+      neighborhood_sigma_mm: 0.047 # Paper Value: 47 um = 0.047 mm
+    
+    "L3":
+      block_index: 1 # 2nd Block
+      region: "Retina"
+      surface_area_mm2: 5.7
+      neighborhood_sigma_mm: 0.047 # Paper Value: 47 um
+    
+    # --- V1 (Stage 2) ---
+    "L4":
+      block_index: 2 # 3rd Block
+      region: "V1"
+      surface_area_mm2: 1350.0 # Paper Value: 13.5 cm^2
+      neighborhood_sigma_mm: 1.6 # Paper Value: 1.6 mm
+    
+    "L5":
+      block_index: 3 # 4th Block
+      region: "V1"
+      surface_area_mm2: 1350.0
+      neighborhood_sigma_mm: 1.6 # Paper Value: 1.6 mm
+
+    # --- V2 & V4 (Stage 3) ---
+    "L6":
+      block_index: 4 # 5th Block
+      region: "V2"
+      surface_area_mm2: 1200.0 # Paper Value: 12 cm^2
+      neighborhood_sigma_mm: 4.0 # Paper Value: 4 mm
+
+    "L7":
+      block_index: 5 # 6th Block
+      region: "V4"
+      surface_area_mm2: 500.0 # Paper Value: 5 cm^2
+      neighborhood_sigma_mm: 2.5 # Paper Value: 2.5 mm
+
+    # --- VTC (Stage 4) ---
+    "L8":
+      block_index: 6 # 7th Block
+      region: "VTC"
+      surface_area_mm2: 4900.0 # Paper Value: 49 cm^2
+      neighborhood_sigma_mm: 31.0 # Paper Value: 31 mm
+    
+    "L9":
+      block_index: 7 # 8th Block
+      region: "VTC"
+      surface_area_mm2: 4900.0
+      neighborhood_sigma_mm: 31.0 # Paper Value: 31 mm
+
+cortical_sheet:
+  visual_field_dva: 8.0 # Paper Value: 8 degrees
+
+training:
+  batch_size: 128     # Adjusted for dev (Paper Value: 512)
+  epochs_stage1: 5    # Adjusted for dev (Paper Value: 200)
+  epochs_stage3: 5    # Adjusted for dev (Paper Value: 200)
+  learning_rate: 0.6  # Paper Value
+  spatial_loss_weight_alpha: 0.25 # Paper Value
+  weight_decay: 1.0e-4 # Paper Value
+
+shuffling:
+  iterations: 500      # Adjusted for dev (Paper Value: 10,000)
+  sub_iterations: 20   # Adjusted for dev (Paper Value: 500)
+  # Gratings Generation Parameters (From STAR Methods: "Stimuli and Tuning Curves")
+  gratings:
+    img_size: 224 # Paper Value: 224x224 pixels
+    orientations: 8 # Paper Value: 8 orientations (0-180)
+    spatial_frequencies: 8 # Paper Value: 8 SFs (0.5-12 cpd)
+    phases: 5  # Paper Value: 5 phases
+    chromaticities: 2 # Paper Value: 2 chromaticities (B/W, R/C)
