@@ -2,12 +2,13 @@
 
 **Digital traces of Theoretical Neuroscience & NeuroAI.**
 
-This repository consolidates academic papers into persistent memory through **notes** and **code reproductions**.
+This repository consolidates theoretical foundations, literature notes, and code reproductions for Theoretical Neuroscience and NeuroAI.
 
 ## Structure
 
-- **Surveys/**: Notes and summaries for survey papers.
-- **Implementations/**: Notes and code reproductions for specific articles.
+- **Foundations/**: Foundational notes on math, geometry, neuroscience, and machine learning concepts.
+- **Literature/**: Literature notes, conceptual syntheses, and non-reproduced research articles.
+- **Implementations/**: Code reproductions, experiments, and implementation notes for specific papers.
 
 ## Usage
 
