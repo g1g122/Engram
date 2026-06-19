@@ -30,6 +30,7 @@ logs
 
 # Datasets
 datasets/
+_datasets/
 
 # Models weight
 *.pt
