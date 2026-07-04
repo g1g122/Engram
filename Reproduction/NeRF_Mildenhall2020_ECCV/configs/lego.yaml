@@ -6,7 +6,7 @@ experiment:
   base_dir: "./logs"         # Directory for checkpoints and logs
 
 data:
-  datadir: "../datasets/nerf_synthetic/lego"
+  datadir: "../../Datasets/NeRF/nerf_synthetic/lego"
   dataset_type: "blender"
   factor: 1                   # Downsample factor (1 = full 800x800, 2 = half 400x400)
   testskip: 1                 # Load every Nth val/test image (1 = all)

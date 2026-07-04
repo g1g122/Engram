@@ -143,7 +143,7 @@ def run_analysis(
     print("\n=== VTC Analysis ===")
 
     # Load fLoc data
-    floc_path = Path(__file__).parent.parent / 'datasets' / 'fLoc'
+    floc_path = Path('../../Datasets/fLoc')
     if floc_path.exists():
         floc_loader = create_floc_dataloader(str(floc_path), batch_size=32, num_workers=0)
 
@@ -282,10 +282,10 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python main.py --all --dataset-path ../datasets
-  python main.py --stage 1 --dataset-path ../datasets --use-pretrained
+  python main.py --all --dataset-path ../../Datasets
+  python main.py --stage 1 --dataset-path ../../Datasets --use-pretrained
   python main.py --stage 2 --checkpoint outputs/stage1/stage1_checkpoint.pt
-  python main.py --stage 3 --dataset-path ../datasets --permutation outputs/stage2/permutations.pt
+  python main.py --stage 3 --dataset-path ../../Datasets --permutation outputs/stage2/permutations.pt
   python main.py --analyze --model outputs/stage3/tdann_final.pt
         """
     )

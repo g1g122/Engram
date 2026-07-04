@@ -6,7 +6,7 @@ experiment:
   base_dir: "./logs"            # Directory for checkpoints and logs
 
 data:
-  datadir: "../datasets/nerf_llff_data/fern"
+  datadir: "../../Datasets/NeRF/nerf_llff_data/fern"
   dataset_type: "llff"
   factor: 1                     # Downsample factor (1 = full res, 4 or 8 for faster training)
   white_bkgd: false             # Real-world photos, no alpha channel

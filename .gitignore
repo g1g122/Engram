@@ -28,10 +28,10 @@ env/
 *.log
 logs
 
-# Datasets
-datasets/
-_datasets/
-
 # Models weight
 *.pt
 *.pth
+
+# Directories
+Datasets/
+Workbench/
