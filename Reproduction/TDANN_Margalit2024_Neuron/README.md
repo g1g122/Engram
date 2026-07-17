@@ -4,7 +4,10 @@ A PyTorch reproduction of **"A unifying framework for functional organization in
 
 📄 **Original Paper**: [https://doi.org/10.1016/j.neuron.2024.04.018](https://doi.org/10.1016/j.neuron.2024.04.018)
 
-> **Note**: This is an **independent reproduction** based solely on the paper and its supplementary materials. No original code was referenced during implementation. For the official implementation, please refer to the links provided in the original publication.
+This repository is not affiliated with or maintained by the original authors. It is an independent reproduction based solely on the paper and its supplementary materials; no original code was referenced during implementation. For the official implementation, please refer to the links provided in the original publication.
+
+A reading note for the original paper is available at
+`Literature/Theoretical Framework/Emergence of visual cortical organization from task and biophysical constraints.md`.
 
 ## Overview
 
@@ -145,9 +148,3 @@ This reproduction differs from the original paper in a few aspects. If you notic
 | Stage 1 Pretraining | torchvision pretrained weights | SimCLR self-supervised pretraining |
 | Training Dataset | Mini-ImageNet | Full ImageNet |
 | Batch Size | 256 | 512 |
-
-## Acknowledgments
-
-If you use this code, please cite the original paper:
-
-> Margalit, E., Lee, H., Finzi, D., DiCarlo, J. J., Grill-Spector, K., & Yamins, D. L. (2024). A unifying framework for functional organization in early and higher ventral visual cortex. *Neuron*, 112, 2435-2451.

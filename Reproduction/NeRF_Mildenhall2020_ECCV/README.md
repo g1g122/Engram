@@ -2,6 +2,11 @@
 
 A from-scratch PyTorch reproduction of [NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis](https://arxiv.org/abs/2003.08934) (Mildenhall et al., ECCV 2020).
 
+This repository is not affiliated with or maintained by the original authors.
+
+A reading note for the original paper is available at
+`Literature/Technical Methods/Neural radiance fields and volume rendering.md`.
+
 Supports both **Blender Synthetic** (360° object-centric) and **LLFF** (forward-facing real-world) datasets, including NDC space warping and spiral render path generation.
 
 ## Results
@@ -150,14 +155,3 @@ python main.py --config configs/fern.yaml --render_only --ckpt_step 200000
 - **MLP Architecture**: 8-layer, 256-wide density branch with skip connection at layer 4; 128-wide color branch conditioned on view direction.
 - **NDC Space Warping**: For forward-facing (LLFF) scenes, rays are warped into Normalized Device Coordinates to handle unbounded depth.
 - **Training**: Adam optimizer, initial LR 5e-4 with exponential decay.
-
-## Reference
-
-```bibtex
-@inproceedings{mildenhall2020nerf,
-  title={NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis},
-  author={Ben Mildenhall and Pratul P. Srinivasan and Matthew Tancik and Jonathan T. Barron and Ravi Ramamoorthi and Ren Ng},
-  booktitle={ECCV},
-  year={2020}
-}
-```
