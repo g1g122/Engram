@@ -1,6 +1,6 @@
 # Mixture-of-Adapters for Domain Generalization: Adaptive PEFT over Large Pretrained Models
 
-[Paper Link](https://dx.doi.org/10.2139/ssrn.4786252)
+[Paper Link](https://doi.org/10.1109/WACV61041.2025.00801)
 
 ## 目录
 

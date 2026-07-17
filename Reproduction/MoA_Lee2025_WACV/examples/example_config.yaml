@@ -1,0 +1,47 @@
+experiment:
+  name: moa-example
+  output_dir: path/to/your/outputs/moa-example
+  overwrite: false
+  train_seeds: [1]
+  split_seeds: [0]
+
+data:
+  # Change this to the directory that contains PACS/.
+  root: path/to/your/datasets
+  dataset: PACS
+  # null runs one leave-one-domain-out experiment for each PACS domain.
+  test_domains: null
+  holdout_fraction: 0.2
+  split_mode: random
+  image_size: 224
+  normalization: clip
+  augment: true
+  num_workers: 12
+
+train:
+  steps: 5001
+  checkpoint_freq: 200
+  batch_size: 32
+  optimizer: adam
+  lr: 5.0e-5
+  weight_decay: 0.0
+  device: cuda
+  amp: false
+  max_grad_norm: null
+  log_interval: 50
+
+model:
+  backbone: moa_clip_vit_b16
+  pretrained: true
+  num_experts: 4
+  phm_dim: 64
+  ranks: [1, 2, 4, 8]
+  share_rule: true
+  block_stride: 2
+  router_temperature: 0.5
+  router_noise_std: 0.25
+  aux_loss_type: load_importance
+  aux_weight: 0.01
+  adapter_scale: 1.0
+  init_std: 0.01
+  expert_dropout: 0.5
